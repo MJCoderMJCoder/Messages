@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2014 Alex Curran
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <view
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            class="com.amlcurran.messages.ui.BlockProgressBar"
+            android:id="@+id/compose_progress"
+            android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="?android:attr/buttonBarStyle">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                android:paddingLeft="4dp"
+                style="@style/NoChromeEditText"
+                android:id="@+id/thread_sms_entry"
+                android:hint="@string/hint_send_message"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:inputType="textShortMessage|text|textMultiLine|textCapSentences|textAutoCorrect"/>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent">
+
+            <ImageButton
+                    android:layout_width="@dimen/thread_message_offset_horizontal"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/cd_send_button"
+                    android:id="@+id/thread_sms_send"
+                    android:src="@drawable/ic_action_send"
+                    android:background="@drawable/selectable_background_messages"
+                    android:layout_weight="1"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/compose_sms_number"
+                    style="@style/Material.Body1.Light"
+                    android:textColor="@color/theme_colour_60"
+                    android:gravity="center"
+                    android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+def VERSION_MAJOR = 0
+def VERSION_MINOR = 2
+def VERSION_PATCH = 0
+def VERSION_CODE = Integer.valueOf("${VERSION_PATCH}") + 10 * Integer.valueOf("${VERSION_MINOR}") + 1000 * Integer.valueOf("${VERSION_MAJOR}")
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionName "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
+        versionCode Integer.valueOf("${VERSION_CODE}")
+    }
+    signingConfigs {
+        release {
+            storeFile file("../release.keystore")
+            storePassword MESSAGES_KEYSTORE_PW
+            keyAlias "messages"
+            keyPassword MESSAGES_ALIAS_PW
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+        release {
+            debuggable false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+        test {
+            java.srcDirs = ['test']
+        }
+        debug {
+            manifest.srcFile 'AndroidManifest-debug.xml'
+            res.srcDirs = ['res-debug']
+            java.srcDirs = ['src-debug']
+        }
+        demo {
+            res.srcDirs = ['res-demo']
+        }
+    }
+}
+
+def getVersionName() {
+    String versionName = "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
+    return versionName
+}
+
+def getVersionCode() {
+    return Integer.parseInt(new Date(System.currentTimeMillis()).format("YYYYMMdd"))
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:22.1.1'
+    compile project(':core')
+    compile 'com.android.support:support-annotations:20.0.0'
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.android.support:recyclerview-v7:21.0.3'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
+    testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
+    testCompile 'junit:junit:4.12'
+}

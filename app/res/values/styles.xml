@@ -1,0 +1,126 @@
+<resources>
+
+    <style name="ThreadTimeStamp">
+        <item name="android:textSize">12sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/material_text_low_dark</item>
+    </style>
+
+    <style name="ThreadTimeStamp.Received">
+        <item name="android:textColor">@color/material_text_low_light</item>
+    </style>
+
+    <style name="ThreadMessage" parent="Material.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:textColor">@color/material_text_standard_dark</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:textColorLink">@color/theme_alt_color_2</item>
+    </style>
+
+    <style name="ThreadMessage.Received">
+        <item name="android:textColor">@color/material_text_standard_light</item>
+    </style>
+
+    <style name="DisabledBannerText">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:background">@color/theme_colour</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="NoChromeEditText" parent="@android:style/Widget.Holo.EditText">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="ConversationText" parent="Material.Body1">
+        <item name="android:ellipsize">end</item>
+        <item name="android:minLines">@integer/conversation_preview_lines</item>
+    </style>
+
+    <style name="ConversationText.Read" parent="Material.Body1">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">@integer/conversation_preview_lines</item>
+        <item name="android:lines">@integer/conversation_preview_lines</item>
+    </style>
+
+    <style name="ConversationText.Unread">
+        <item name="android:maxLines">@integer/conversation_preview_lines</item>
+    </style>
+
+    <style name="ConversationText.Unread.Large">
+        <item name="android:maxLines">@integer/conversation_preview_lines_unread</item>
+    </style>
+
+    <style name="ConversationTitle" parent="Material.Title">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="ConversationTitle.Unread">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/theme_colour</item>
+    </style>
+
+    <style name="LoadingView">
+        <item name="lv_scale">@integer/loading_scale_small</item>
+    </style>
+
+    <style name="LoadingView.Large">
+        <item name="lv_scale">@integer/loading_scale_large</item>
+    </style>
+
+    <style name="ContactView" />
+
+    <style name="ContactView.Chip">
+        <item name="cv_titleTextAppearance">@style/ContactViewTitleChip</item>
+    </style>
+
+    <style name="ContactView.Inverse">
+        <item name="cv_titleTextAppearance">@style/ContactViewTitle.Light</item>
+        <item name="cv_secondaryTextAppearance">@style/ContactViewLightSecondary</item>
+    </style>
+
+    <style name="ContactViewTitle.Light">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+    </style>
+
+    <style name="ContactViewTitle" parent="@android:style/TextAppearance.Medium">
+    </style>
+
+    <style name="ContactViewTitleChip" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ContactViewLightSecondary" parent="@android:style/TextAppearance.Small.Inverse">
+        <item name="android:textColor">#bbffffff</item>
+    </style>
+
+    <style name="Text.Mission">
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="Text" parent="android:TextAppearance.Holo.Medium" />
+
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:src">@drawable/ic_new_message_inverse</item>
+    </style>
+
+    <style name="ConversationCount" parent="Material.Body1">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <integer name="loading_scale_small">2</integer>
+    <integer name="loading_scale_large">1</integer>
+    <integer name="conversation_preview_lines_unread">5</integer>
+</resources>

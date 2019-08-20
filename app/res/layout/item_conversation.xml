@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/selectable_background_messages_activatable">
+
+    <view
+            android:layout_width="48dp"
+            android:layout_height="76dp"
+            class="com.amlcurran.messages.ui.image.CutImageView"
+            android:layout_marginRight="2dp"
+            android:id="@+id/image"
+            android:layout_marginLeft="-8dp"/>
+
+    <TextView
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:id="@android:id/text1"
+            android:ellipsize="end"
+            android:maxLines="@integer/conversation_preview_lines"/>
+
+</LinearLayout>
